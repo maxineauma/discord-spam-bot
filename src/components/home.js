@@ -33,15 +33,10 @@ class Home extends React.Component {
                     <Jumbotron className="p-5 bg-light rounded">
                         <h2>Getting Started</h2>
                         <p>This is a Discord spam bot tool.</p>
-                        <Alert variant="info">
-                            <strong>🔧 Functionality Warning:</strong> Be sure to log in at least once from your IP address on the Discord account you're using. It <strong>cannot</strong> have 2FA.
-                        </Alert>
-                        <Alert variant="danger">
-                            <strong>🐞 Bug Warning:</strong> Inputting an invalid guild ID (w/ correct credentials) causes the scraper to hang, necessitating a refresh.
-                        </Alert>
-                        <Alert variant="warning">
-                            <strong>🦗 Bug Advisory:</strong> The spamming script will not validate your credentials, and the maximum run-time is <strong>1 day</strong>, as per <code>puppeteer-cluster</code>'s limitations.
-                        </Alert>
+
+                        <Alert variant="info"><strong>🔧 Functionality Warning:</strong> Be sure to log in at least once from your IP address on the Discord account you're using. It <strong>cannot</strong> have 2FA.</Alert>
+                        <Alert variant="danger"><strong>🐞 Bug Warning:</strong> Inputting an invalid guild ID (w/ correct credentials) causes the scraper to hang, necessitating a refresh.</Alert>
+                        <Alert variant="warning"><strong>🦗 Bug Advisory:</strong> The spamming script will not validate your credentials, and the maximum run-time is <strong>1 day</strong>, as per <code>puppeteer-cluster</code>'s limitations.</Alert>
 
                         <Row>
                             <Col>
