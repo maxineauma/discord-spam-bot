@@ -8,7 +8,8 @@
 `python -m pip install --user --upgrade git+https://github.com/Merubokkusu/Discord-S.C.U.M.git`.
 
 ## Installation
-* Clone this repository with: `git clone https://github.com/maxsaystransrights/discord-spam-bot.git && cd discord-spam-bot`
+* Clone this repository with:<br/>
+`git clone https://github.com/maxsaystransrights/discord-spam-bot.git && cd discord-spam-bot`
 * Install dependencies with: `npm install`.
 * Run: `npm run start` to start the local development server (client) + API handler (server).
 * Head to `localhost:3000`!
