@@ -7,7 +7,6 @@ import {
     Row, Col,
     Navbar, 
     Nav,
-    Button,
     Alert,
     Badge
   } from 'react-bootstrap';
