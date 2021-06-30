@@ -7,7 +7,7 @@ import sys
 acc_email = sys.argv[3]
 acc_passw = sys.argv[4]
 
-bot = discum.Client(email=acc_email, password=acc_passw, log=False)
+bot = discum.Client(email=acc_email, password=acc_passw, user_agent="random", log=False)
 guild_i = sys.argv[1]
 channel_i = sys.argv[2]
 
@@ -21,7 +21,7 @@ def getMembers(resp):
 		bot.gateway.close()
 
 # Grab list of member IDs from gateway session data
-bot.gateway.run()
+bot.gateway.run(auto_reconnect=True)
 member = (bot.gateway.session.guild(guild_i).members)
 
 # Put it all in a nifty little file <3

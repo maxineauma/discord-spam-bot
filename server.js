@@ -19,6 +19,10 @@ app.post('/api/scrape', bodyParser.json(), (req, res) => {
     const spawn = require("child_process").spawn;
     const scrapeScript = spawn("python", ['./scripts/scrapeMembers.py', req.body.guild_id, req.body.channel_id, req.body.account_email, req.body.account_pass]);
 
+    scrapeScript.stdout.on('data', (data) => {
+        console.log(data.toString());
+    });
+
     scrapeScript.on('exit', (code) => {
         console.log(`Finished scraping request on Guild ID (${req.body.guild_id}) (Exit Code: ${code}).`);
 
@@ -32,10 +36,6 @@ app.post('/api/scrape', bodyParser.json(), (req, res) => {
                 break;
         }
     });
-
-    scrapeScript.stderr.on('data', (err) => {
-        console.log(err.toString());
-    })
     
 });
 
@@ -48,7 +48,7 @@ app.post('/api/spam', multer({ storage: multer.memoryStorage() }).single("file")
  
     spamScript.stdout.on('data', (data) => {
         console.log(`${data}`);
-    })
+    });
 
     spamScript.on('exit', (code) => {
         console.log(`Finished spam request from file (Exit Code: ${code}).`);
