@@ -37,8 +37,7 @@ app.post('/api/scrape', bodyParser.json(), (req, res) => {
 
 app.post('/api/spam', multer({ storage: multer.memoryStorage() }).single("file"), (req, res) => {
 
-    const user_ids = req.file.buffer.toString('utf8').split('\n');
-    user_ids = user_ids.filter(i => i);
+    const user_ids = req.file.buffer.toString('utf8').split('\n').filter(i => i);
 
     const spawn = require("child_process").spawn;
     const spamScript = spawn("node", ['./scripts/messageUser.js', user_ids, req.body.account_email, req.body.account_pass, req.body.message, req.body.message_num]);
