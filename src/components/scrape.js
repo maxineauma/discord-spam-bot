@@ -73,6 +73,7 @@ class Scrape extends React.Component {
                   <Jumbotron className="p-5 bg-light rounded">  
                     <h1>Scraping Tool</h1>
                     <p>If you've never used this before or are starting a new instance, you will want to scrape a server for its user ID list.</p>
+                    <p>Before using this, you <strong>must</strong> join the server/channel on the account you're using!</p>
 
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Group className="mb-3" controlId="account_email">
