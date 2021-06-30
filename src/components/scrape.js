@@ -89,13 +89,13 @@ class Scrape extends React.Component {
 
                       <Form.Group className="mb-3" controlId="guild_id">
                           <Form.Label>Target Guild ID</Form.Label>
-                          <Form.Control placeholder="Example: 620840315498004480" disabled={this.state.scrapeStatus > 0 ? true : false}/>
+                          <Form.Control type="number" placeholder="Example: 620840315498004480" disabled={this.state.scrapeStatus > 0 ? true : false}/>
                           <Form.Text className="text-muted">You can get this by right clicking any server and selecting "Copy ID".</Form.Text>
                       </Form.Group>
           
                       <Form.Group className="mb-3" controlId="channel_id">
                           <Form.Label>Target Guild Channel ID</Form.Label>
-                          <Form.Control placeholder="Example: 637376868965941248" disabled={this.state.scrapeStatus > 0 ? true : false}/>
+                          <Form.Control type="number" placeholder="Example: 637376868965941248" disabled={this.state.scrapeStatus > 0 ? true : false}/>
                           <Form.Text className="text-muted">You can get this by right clicking any server's channel and selecting "Copy ID".</Form.Text>
                       </Form.Group>
           
