@@ -1,5 +1,6 @@
 # User text files
-temp_data/*.txt
+temp_data/*
+!temp_data/.gitkeep
 
 # Logs
 logs
