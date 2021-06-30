@@ -6,7 +6,7 @@
 ## Installation
 * Clone this repository with:<br/>
 `git clone https://github.com/maxsaystransrights/discord-spam-bot.git && cd discord-spam-bot`
-* Install dependencies with: `npm install` and `pip install discum`.
+* Install dependencies with: `npm install` and `pip install discum==1.1.0`.
 * Run: `npm run start` to start the local development server (client) + API handler (server).
 * Head to `localhost:3000`!
 
