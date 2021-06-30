@@ -32,6 +32,10 @@ app.post('/api/scrape', bodyParser.json(), (req, res) => {
                 break;
         }
     });
+
+    scrapeScript.stderr.on('data', (err) => {
+        console.log(err.toString());
+    })
     
 });
 
