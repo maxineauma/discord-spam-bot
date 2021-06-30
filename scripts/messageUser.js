@@ -22,7 +22,7 @@ global.USER_IDS = args[0].split(",");
         puppeteerOptions: {
             headless: true
         },
-        sameDomainDelay: 12500,
+        sameDomainDelay: 15000,
         timeout: 86400000
     });
 
@@ -32,7 +32,7 @@ global.USER_IDS = args[0].split(",");
 
     await clust.task(async ({ page, data: url }) => {
 
-            async function login(user, passw) { // typeSpeed in ms
+            async function login(user, passw) {
                 await page.click('input[aria-label="Email or Phone Number"]');
                 await page.type('input[aria-label="Email or Phone Number"]', user, {delay: 20});
                 await page.click('input[aria-label="Password"]');
@@ -69,7 +69,7 @@ global.USER_IDS = args[0].split(",");
             await page.waitFor(1000);
 
             for(x = 0; x<args[4]; x++) {
-                await page.type("[aria-label*='Message @']", args[3], {delay:200});
+                await page.type("[aria-label*='Message @']", args[3], {delay: 100});
                 await page.keyboard.press('Enter');
             }
 
