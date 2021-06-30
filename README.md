@@ -1,6 +1,7 @@
 <h1 align="center" style="border-bottom: none !important; margin-bottom: 5px !important;">Discord Spam Bot Tool</h1>
 
 ## Pre-installation
+* This goes without saying, but the <a href="https://git-scm.com/download/win">latest Git</a> is necessary.
 * Highly recommend having <a href="https://nodejs.org/en/">the latest NodeJS</a>.
 * You'll also want to have <a href="https://www.python.org/downloads/">the latest Python</a>.
 * For the python dependencies, run the following:<br/>
