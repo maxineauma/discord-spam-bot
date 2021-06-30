@@ -7,7 +7,7 @@ import sys
 acc_email = sys.argv[3]
 acc_passw = sys.argv[4]
 
-bot = discum.Client(email=acc_email, password=acc_passw, token="", log=False)
+bot = discum.Client(email=acc_email, password=acc_passw, log=False)
 guild_i = sys.argv[1]
 channel_i = sys.argv[2]
 
