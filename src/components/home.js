@@ -68,7 +68,7 @@ class Home extends React.Component {
                                             <span>This script takes a while to complete, especially if your list is large, so please be patient! If it crashes, check your console.</span>
                                         </p>
                                         <Alert variant="warning">
-                                            <strong>🦗 Bug Advisory:</strong> This script will not validate your credentials, and will not output any error. Some spam workers may also hang, but the rest will continue individually.
+                                            <strong>🦗 Bug Advisory:</strong> This script will not validate your credentials, and will not output any error on exit. The maximum run-time for this script is <strong>1 day</strong>, as per <code>puppeteer-cluster</code>'s limitations.
                                         </Alert>
                                     </Card.Body>
                                 </Card>
