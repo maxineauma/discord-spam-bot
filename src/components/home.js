@@ -46,10 +46,7 @@ class Home extends React.Component {
                                         <Card.Subtitle>Scraping User IDs from Discord server</Card.Subtitle>
                                         <hr/>
                                         <p>
-                                            This tool will make a POST request to <code>/api/scrape</code> and run <code>/scripts/scrapeMembers.py</code>, and will give you:<br/><br/>
-                                            <Button className="mb-2" variant="success" disabled>200 - OK!</Button> <br/>
-                                            <Button className="mb-2" variant="danger" disabled>400 - Bad Request</Button> <br/>
-                                            <Button className="mb-2" variant="danger" disabled>500 - Internal Server Error</Button> <br/>
+                                            This tool will make a POST request to <code>/api/scrape</code> and run <code>/scripts/scrapeMembers.py</code>.<br/><br/>
                                             <span>If all goes well, you can download <code>users.txt</code> and proceed to the spammer tool. Otherwise, check your console.</span>
                                         </p>
                                     </Card.Body>
@@ -63,9 +60,7 @@ class Home extends React.Component {
                                         <Card.Subtitle>Sending mass-message to retrieved User IDs</Card.Subtitle>
                                         <hr/>
                                         <p>
-                                            This tool will make a POST request to <code>/api/spam</code> and run <code>/scripts/messageUser.js</code>, and will give you:<br/><br/>
-                                            <Button className="mb-2" variant="success" disabled>200 - OK!</Button> <br/>
-                                            <Button className="mb-2" variant="danger" disabled>500 - Internal Server Error</Button> <br/>
+                                            This tool will make a POST request to <code>/api/spam</code> and run <code>/scripts/messageUser.js</code>.<br/><br/>
                                             <span>This script takes a while to complete, especially if your list is large, so please be patient! If it crashes, check your console.</span>
                                         </p>
                                     </Card.Body>
