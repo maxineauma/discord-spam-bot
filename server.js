@@ -40,8 +40,8 @@ app.post('/api/spam', multer({ storage: multer.memoryStorage() }).single("file")
     const user_ids = req.file.buffer.toString('utf8').split('\n');
 
     const spawn = require("child_process").spawn;
-    const spamScript = spawn("node", ['./scripts/messageUser.js', user_ids, req.body.account_email, req.body.account_pass]);
-
+    const spamScript = spawn("node", ['./scripts/messageUser.js', user_ids, req.body.account_email, req.body.account_pass, req.body.message, req.body.message_num]);
+ 
     spamScript.stdout.on('data', (data) => {
         console.log(`${data}`);
     })

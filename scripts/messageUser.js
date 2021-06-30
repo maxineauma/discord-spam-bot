@@ -20,9 +20,10 @@ global.USER_IDS = args[0].split(",");
         maxConcurrency: USER_IDS.length,
         monitor: false,
         puppeteerOptions: {
-            headless: false
+            headless: true
         },
-        sameDomainDelay: 12500
+        sameDomainDelay: 12500,
+        timeout: 86400000
     });
 
     clust.on('taskerror', (err, data) => {
@@ -49,7 +50,7 @@ global.USER_IDS = args[0].split(",");
                 return USER_IDS[id];
             }
 
-            console.log("PROCESS: Launching spam worker #" + (WORKER_ID+1) + ".");
+            console.log("PROCESS: Launching spam worker #" + (WORKER_ID+1) + " ("+args[4]+" messages being sent).");
             await page.goto(url, {waitUntil: 'networkidle2'});
             await login(args[1], args[2], 2);
             await getIDfromFile(WORKER_ID).then(i => {
@@ -66,10 +67,13 @@ global.USER_IDS = args[0].split(",");
             await page.waitForSelector("[aria-label*='Message @']");
             await page.click("[aria-label*='Message @']");
             await page.waitFor(1000);
-            await page.type("[aria-label*='Message @']", "pp hARD", {delay:100});
-            //await page.keyboard.press('Enter');
 
-            await page.waitFor(5000);
+            for(x = 0; x<args[4]; x++) {
+                await page.type("[aria-label*='Message @']", args[3], {delay:200});
+                await page.keyboard.press('Enter');
+            }
+
+            await page.waitFor(1000);
 
     });
 

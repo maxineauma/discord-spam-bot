@@ -8,7 +8,8 @@ import {
     Navbar, 
     Nav,
     Button,
-    Alert
+    Alert,
+    Badge
   } from 'react-bootstrap';
   
 class Home extends React.Component {
@@ -19,7 +20,7 @@ class Home extends React.Component {
             <>
                 <Navbar bg="dark" variant="dark" className="p-3">
                   <Navbar.Brand>
-                      Discord Spam Bot
+                      Discord Spam Bot<sup><small><Badge variant="primary">EARLY ACCESS</Badge></small></sup>
                   </Navbar.Brand>
                   <Nav className="justify-content-center" activeKey="/">
                     <Nav.Link href="/">Home</Nav.Link>

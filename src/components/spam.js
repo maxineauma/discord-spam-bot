@@ -7,7 +7,8 @@ import {
     Navbar, 
     Nav,
     Form, 
-    Button 
+    Button,
+    Badge
   } from 'react-bootstrap';
   
 class Spam extends React.Component {
@@ -26,13 +27,15 @@ class Spam extends React.Component {
     handleSubmit = async (e) => {
       e.preventDefault();
 
-      this.setState((state) => ({spamStatus:1}));
+      this.setState((state) => ({spamStatus:1, statusCode:0}));
       let formData = e.target;
       let fileData = new FormData();
 
       fileData.append("file", formData[0].files[0]);
       fileData.append("account_email", formData[1].value);
       fileData.append("account_pass", formData[2].value);
+      fileData.append("message", formData[3].value);
+      fileData.append("message_num", formData[4].value || 1);
       
       console.log(fileData.get("file"));
       await axios.post("/api/spam", fileData)
@@ -46,7 +49,7 @@ class Spam extends React.Component {
             <>
                 <Navbar bg="dark" variant="dark" className="p-3">
                   <Navbar.Brand>
-                      Discord Spam Bot
+                    Discord Spam Bot<sup><small><Badge variant="primary">EARLY ACCESS</Badge></small></sup>
                   </Navbar.Brand>
                   <Nav className="justify-content-center" activeKey="/spam">
                     <Nav.Link href="/">Home</Nav.Link>
@@ -76,6 +79,18 @@ class Spam extends React.Component {
                           <Form.Label>Account Password</Form.Label>
                           <Form.Control type="password" placeholder="Example: password" disabled={this.state.spamStatus > 0 ? true : false}/>
                           <Form.Text className="text-muted">Make sure this is a burner account, you don't want to get your account banned.</Form.Text>
+                      </Form.Group>
+
+                      <Form.Group className="mb-3" controlId="message" inline>
+                          <Form.Label>Message</Form.Label>
+                          <Form.Control maxlength="500" placeholder="Example: Hello World" disabled={this.state.spamStatus > 0 ? true : false}/>
+                          <Form.Text className="text-muted">This is the message you're going to send to every victim on this list (max length is 500).</Form.Text>
+                      </Form.Group>
+
+                      <Form.Group className="mb-3" controlId="message_num" inline>
+                          <Form.Label># of times to send message</Form.Label>
+                          <Form.Control type="number" min="1" max="100" placeholder="Example: 22" disabled={this.state.spamStatus > 0 ? true : false}/>
+                          <Form.Text className="text-muted">How many times you want to send the above message to each victim (default is 1, max is 100).</Form.Text>
                       </Form.Group>
 
                       {/*

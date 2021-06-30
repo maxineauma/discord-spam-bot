@@ -7,7 +7,8 @@ import {
     Navbar, 
     Nav,
     Form, 
-    Button
+    Button,
+    Badge
   } from 'react-bootstrap';
 
 class Scrape extends React.Component {
@@ -59,7 +60,7 @@ class Scrape extends React.Component {
             <>
                 <Navbar bg="dark" variant="dark" className="p-3">
                   <Navbar.Brand>
-                      Discord Spam Bot
+                    Discord Spam Bot<sup><small><Badge variant="primary">EARLY ACCESS</Badge></small></sup>
                   </Navbar.Brand>
                   <Nav className="justify-content-center" activeKey="/scrape">
                     <Nav.Link href="/">Home</Nav.Link>
