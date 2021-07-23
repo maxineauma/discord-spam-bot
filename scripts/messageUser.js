@@ -42,7 +42,7 @@ global.USER_IDS = args[0].split(",");
 
             async function doubleClick(selector) {
                 await page.click(selector);
-                await page.waitFor(1000);
+                await page.waitForTimeout(1000);
                 await page.click(selector);
             }
 
@@ -57,7 +57,7 @@ global.USER_IDS = args[0].split(",");
                 page.goto("https://discord.com/users/"+i);
                 WORKER_ID++;
             });
-            await page.waitFor(1000);
+            await page.waitForTimeout(1000);
             await page.waitForSelector("[class*='additionalActionsIcon-']");
             await doubleClick("[class*='additionalActionsIcon-']"); // fuck discord so much lol
 
@@ -66,14 +66,14 @@ global.USER_IDS = args[0].split(",");
 
             await page.waitForSelector("[aria-label*='Message @']");
             await page.click("[aria-label*='Message @']");
-            await page.waitFor(1000);
+            await page.waitForTimeout(1000);
 
             for(x = 0; x<args[4]; x++) {
                 await page.type("[aria-label*='Message @']", args[3], {delay: 100});
                 await page.keyboard.press('Enter');
             }
 
-            await page.waitFor(1000);
+            await page.waitForTimeout(1000);
 
     });
 
